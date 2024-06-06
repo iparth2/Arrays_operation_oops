@@ -9,19 +9,26 @@ public class Multipication {
         int[][] finalArr2 = m2.storedArr;
 
         // Check if the dimensions of the matrices are the same
-        if (finalArr1.length != finalArr2.length || finalArr1[0].length != finalArr2[0].length) {
-            throw new IllegalArgumentException("Matrices dimensions do not match.");
+        if (m1.col != m2.rows) {
+            throw new IllegalArgumentException("Matrices dimensions do not match for Multiplication.");
         }
 
         // Initialize fArr with the same dimensions as the input matrices
-        fArr = new int[finalArr1.length][finalArr1[0].length];
+        fArr = new int[m1.rows][m2.col];
+        int sum =0;
 
-        for (int i = 0; i < finalArr1.length; i++) {
-            for (int j = 0; j < finalArr1[0].length; j++) {
-                fArr[i][j] = finalArr1[i][j] * finalArr2[i][j];
+        for (int i = 0; i <m1.rows ; i++) {
+            for (int j = 0; j < m2.col; j++) {
+
+                for (int j2 = 0; j2 < m1.rows-1; j2++) {
+                    sum+= finalArr1[i][j] * finalArr2[j][i];
+                }
+                fArr[i][j] = sum;
+                sum =0;
             }
         }
-
+        
+        System.out.println("Resultant Matrix of (x,y)-->("+ m1.rows + "," + m2.col + ") is: ");   
         GetResultantMatrix obj = new GetResultantMatrix();
         obj.GetResultMatrix(fArr); 
     }

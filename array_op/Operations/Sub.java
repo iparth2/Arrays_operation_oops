@@ -1,9 +1,10 @@
-package array_op;
+package array_op.Operations;
+import array_op.*;
 
-class Add {
+public class Sub {
     public int[][] fArr; 
 
-    public void add(InputRowsCols m1, InputRowsCols m2) {
+    public void sub(InputRowsCols m1, InputRowsCols m2) {
         int[][] finalArr1 = m1.storedArr;
         int[][] finalArr2 = m2.storedArr;
 
@@ -17,7 +18,7 @@ class Add {
 
         for (int i = 0; i < finalArr1.length; i++) {
             for (int j = 0; j < finalArr1[0].length; j++) {
-                fArr[i][j] = finalArr1[i][j] + finalArr2[i][j];
+                fArr[i][j] = finalArr1[i][j] - finalArr2[i][j];
             }
         }
 

@@ -16,16 +16,13 @@ public class Diagonals {
 
         for (int i = 0; i < m1.rows; i++) {
             for (int j = 0; j < m1.col; j++) {
-                if(i==j){
-                fArr[i][j] = finalArr1[i][j] ;
-            }else{
-                break;
-            }
+                if(i==j || i+j==m1.rows-1){
+                    fArr[i][j] = finalArr1[i][j];        
+                }
             }
         }
-
-
         GetResultantMatrix obj = new GetResultantMatrix();
-        obj.GetResultMatrix(fArr);
+        obj.GetResultMatrix(fArr); 
+
     }
 }

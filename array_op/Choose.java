@@ -8,7 +8,7 @@ public class Choose {
  
 
     public void chooseOperations() {
-        System.out.println("Enter:- \n 1. for Matrix Addition " + " \n 2. for Matrix Subtraction " + " \n 3. for Matrix Multiplication" + " \n 4. for Operations on a 'No'" + " \n 5. for Transpose Matrix");
+        System.out.println("Enter:- \n 1. for Matrix Addition " + " \n 2. for Matrix Subtraction " + " \n 3. for Matrix Multiplication" + " \n 4. for Operations on a 'No'" + " \n 5. for Transpose Matrix" + " \n 6. for printing Diagonals elements" + " \n 7. Fun Game");
         System.out.print("Choose the operation: ");
         
         int chossenNo = in.nextInt();
@@ -57,8 +57,25 @@ public class Choose {
             obj121.diagonals(m1);
             break;
 
+            case 7:
+            Game obj1211 = new Game();
+            obj1211.playGame();
+            break;
+
+
             default:
+            System.out.println("Your operation is not supported");
+            System.out.println("<--- Please try again --->");
+            System.out.println("If you want to Exit, press 0 or to Continue press any other number");
+            System.out.print("Enter your response: ");
+            int cont = in.nextInt();
+            if (cont == 0) {
+                System.out.println("Thank you for using our application");
                 break;
+            }else{
+                Main.main(null);
+                break;
+            }
         }
         
         
